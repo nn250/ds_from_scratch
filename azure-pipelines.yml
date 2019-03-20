@@ -19,7 +19,7 @@ steps:
 - script: |
     pip install pytest
     pip install pytest-cov
-    python -m pytest 
+    pytest 
   displayName: 'test pytest'
 
 
