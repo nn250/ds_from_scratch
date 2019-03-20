@@ -10,8 +10,17 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: pytest
-  displayName: 'Run pytest'
+- script: |
+    pip install pytest
+    pip install pytest-cov
+    pytest
+  displayName: 'test pytest'
+
+-script: |
+    python -m pip install flake8
+    flake8 .
+displayName: 'Run lint tests'
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
