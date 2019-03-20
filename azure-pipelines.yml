@@ -27,7 +27,10 @@ steps:
     python -m pytest
   displayName: 'test pytest'
 
-
+- script: |
+    python -m pip install flake8
+    flake8 .
+  displayName: 'Run lint tests'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
